@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <title>Code coverage report for node-npmtest-debug/debug/src/node.js</title>
     <meta charset="utf-8">
     <style>
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-debug/debug/src/</a> &#187; node.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-debug/debug/src/</a> » node.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -733,22 +731,22 @@ exports.colors = [6, 2, 3, 4, 5, 1];
 &nbsp;
 exports.inspectOpts = Object.keys(process.env).filter(function (key) {
   return /^debug_/i.test(key);
-}).reduce(<span class="fstat-no" title="function not covered" >function (obj, key) {</span>
+}).reduce(<span class="fstat-no" title="function not covered">function (obj, key) {</span>
   // camel-case
-<span class="cstat-no" title="statement not covered" >  var prop = key</span>
+<span class="cstat-no" title="statement not covered">  var prop = key</span>
     .substring(6)
     .toLowerCase()
-    .replace(/_([a-z])/g, <span class="fstat-no" title="function not covered" >function (_, k) {</span> <span class="cstat-no" title="statement not covered" >return k.toUpperCase() }</span>);
+    .replace(/_([a-z])/g, <span class="fstat-no" title="function not covered">function (_, k) {</span> <span class="cstat-no" title="statement not covered">return k.toUpperCase() }</span>);
 &nbsp;
   // coerce string value into JS value
-<span class="cstat-no" title="statement not covered" >  var val = process.env[key];</span>
-<span class="cstat-no" title="statement not covered" >  if (/^(yes|on|true|enabled)$/i.test(val)) <span class="cstat-no" title="statement not covered" >val = true;</span></span>
-  else <span class="cstat-no" title="statement not covered" >if (/^(no|off|false|disabled)$/i.test(val)) <span class="cstat-no" title="statement not covered" >val = false;</span></span>
-  else <span class="cstat-no" title="statement not covered" >if (val === 'null') <span class="cstat-no" title="statement not covered" >val = null;</span></span>
-  else <span class="cstat-no" title="statement not covered" >val = Number(val);</span>
+<span class="cstat-no" title="statement not covered">  var val = process.env[key];</span>
+<span class="cstat-no" title="statement not covered">  if (/^(yes|on|true|enabled)$/i.test(val)) <span class="cstat-no" title="statement not covered">val = true;</span></span>
+  else <span class="cstat-no" title="statement not covered">if (/^(no|off|false|disabled)$/i.test(val)) <span class="cstat-no" title="statement not covered">val = false;</span></span>
+  else <span class="cstat-no" title="statement not covered">if (val === 'null') <span class="cstat-no" title="statement not covered">val = null;</span></span>
+  else <span class="cstat-no" title="statement not covered">val = Number(val);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  obj[prop] = val;</span>
-<span class="cstat-no" title="statement not covered" >  return obj;</span>
+<span class="cstat-no" title="statement not covered">  obj[prop] = val;</span>
+<span class="cstat-no" title="statement not covered">  return obj;</span>
 }, {});
 &nbsp;
 /**
@@ -760,20 +758,20 @@ exports.inspectOpts = Object.keys(process.env).filter(function (key) {
 &nbsp;
 var fd = parseInt(process.env.DEBUG_FD, 10) || 2;
 &nbsp;
-<span class="missing-if-branch" title="if path not taken" >I</span>if (1 !== fd &amp;&amp; 2 !== fd) {
-<span class="cstat-no" title="statement not covered" >  util.deprecate(<span class="fstat-no" title="function not covered" >function(){</span>}, 'except for stderr(2) and stdout(1), any other usage of DEBUG_FD is deprecated. Override debug.log if you want to use a different log function (https://git.io/debug_fd)')()</span>
+<span class="missing-if-branch" title="if path not taken">I</span>if (1 !== fd &amp;&amp; 2 !== fd) {
+<span class="cstat-no" title="statement not covered">  util.deprecate(<span class="fstat-no" title="function not covered">function(){</span>}, 'except for stderr(2) and stdout(1), any other usage of DEBUG_FD is deprecated. Override debug.log if you want to use a different log function (https://git.io/debug_fd)')()</span>
 }
 &nbsp;
-var stream = 1 === fd ? <span class="branch-0 cbranch-no" title="branch not covered" >process.stdout </span>:
+var stream = 1 === fd ? <span class="branch-0 cbranch-no" title="branch not covered">process.stdout </span>:
              2 === fd ? process.stderr :
-<span class="branch-1 cbranch-no" title="branch not covered" >             createWritableStdioStream(fd);</span>
+<span class="branch-1 cbranch-no" title="branch not covered">             createWritableStdioStream(fd);</span>
 &nbsp;
 /**
  * Is stdout a TTY? Colored output is enabled when `true`.
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function useColors() {</span>
-<span class="cstat-no" title="statement not covered" >  return 'colors' in exports.inspectOpts</span>
+<span class="fstat-no" title="function not covered">function useColors() {</span>
+<span class="cstat-no" title="statement not covered">  return 'colors' in exports.inspectOpts</span>
     ? Boolean(exports.inspectOpts.colors)
     : tty.isatty(fd);
 }
@@ -782,9 +780,9 @@ var stream = 1 === fd ? <span class="branch-0 cbranch-no" title="branch not cove
  * Map %o to `util.inspect()`, all on a single line.
  */
 &nbsp;
-exports.formatters.o = <span class="fstat-no" title="function not covered" >function(v) {</span>
-<span class="cstat-no" title="statement not covered" >  this.inspectOpts.colors = this.useColors;</span>
-<span class="cstat-no" title="statement not covered" >  return util.inspect(v, this.inspectOpts)</span>
+exports.formatters.o = <span class="fstat-no" title="function not covered">function(v) {</span>
+<span class="cstat-no" title="statement not covered">  this.inspectOpts.colors = this.useColors;</span>
+<span class="cstat-no" title="statement not covered">  return util.inspect(v, this.inspectOpts)</span>
     .replace(/\s*\n\s*/g, ' ');
 };
 &nbsp;
@@ -792,9 +790,9 @@ exports.formatters.o = <span class="fstat-no" title="function not covered" >func
  * Map %o to `util.inspect()`, allowing multiple lines if needed.
  */
 &nbsp;
-exports.formatters.O = <span class="fstat-no" title="function not covered" >function(v) {</span>
-<span class="cstat-no" title="statement not covered" >  this.inspectOpts.colors = this.useColors;</span>
-<span class="cstat-no" title="statement not covered" >  return util.inspect(v, this.inspectOpts);</span>
+exports.formatters.O = <span class="fstat-no" title="function not covered">function(v) {</span>
+<span class="cstat-no" title="statement not covered">  this.inspectOpts.colors = this.useColors;</span>
+<span class="cstat-no" title="statement not covered">  return util.inspect(v, this.inspectOpts);</span>
 };
 &nbsp;
 /**
@@ -803,18 +801,18 @@ exports.formatters.O = <span class="fstat-no" title="function not covered" >func
  * @api public
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function formatArgs(args) {</span>
-<span class="cstat-no" title="statement not covered" >  var name = this.namespace;</span>
-<span class="cstat-no" title="statement not covered" >  var useColors = this.useColors;</span>
+<span class="fstat-no" title="function not covered">function formatArgs(args) {</span>
+<span class="cstat-no" title="statement not covered">  var name = this.namespace;</span>
+<span class="cstat-no" title="statement not covered">  var useColors = this.useColors;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (useColors) {</span>
-<span class="cstat-no" title="statement not covered" >    var c = this.color;</span>
-<span class="cstat-no" title="statement not covered" >    var prefix = '  \u001b[3' + c + ';1m' + name + ' ' + '\u001b[0m';</span>
+<span class="cstat-no" title="statement not covered">  if (useColors) {</span>
+<span class="cstat-no" title="statement not covered">    var c = this.color;</span>
+<span class="cstat-no" title="statement not covered">    var prefix = '  \u001b[3' + c + ';1m' + name + ' ' + '\u001b[0m';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    args[0] = prefix + args[0].split('\n').join('\n' + prefix);</span>
-<span class="cstat-no" title="statement not covered" >    args.push('\u001b[3' + c + 'm+' + exports.humanize(this.diff) + '\u001b[0m');</span>
+<span class="cstat-no" title="statement not covered">    args[0] = prefix + args[0].split('\n').join('\n' + prefix);</span>
+<span class="cstat-no" title="statement not covered">    args.push('\u001b[3' + c + 'm+' + exports.humanize(this.diff) + '\u001b[0m');</span>
   } else {
-<span class="cstat-no" title="statement not covered" >    args[0] = new Date().toUTCString()</span>
+<span class="cstat-no" title="statement not covered">    args[0] = new Date().toUTCString()</span>
       + ' ' + name + ' ' + args[0];
   }
 }
@@ -823,8 +821,8 @@ exports.formatters.O = <span class="fstat-no" title="function not covered" >func
  * Invokes `util.format()` with the specified arguments and writes to `stream`.
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function log() {</span>
-<span class="cstat-no" title="statement not covered" >  return stream.write(util.format.apply(util, arguments) + '\n');</span>
+<span class="fstat-no" title="function not covered">function log() {</span>
+<span class="cstat-no" title="statement not covered">  return stream.write(util.format.apply(util, arguments) + '\n');</span>
 }
 &nbsp;
 /**
@@ -835,12 +833,12 @@ exports.formatters.O = <span class="fstat-no" title="function not covered" >func
  */
 &nbsp;
 function save(namespaces) {
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (null == namespaces) {
+  <span class="missing-if-branch" title="else path not taken">E</span>if (null == namespaces) {
     // If you set a process.env field to null or undefined, it gets cast to the
     // string 'null' or 'undefined'. Just delete instead.
     delete process.env.DEBUG;
   } else {
-<span class="cstat-no" title="statement not covered" >    process.env.DEBUG = namespaces;</span>
+<span class="cstat-no" title="statement not covered">    process.env.DEBUG = namespaces;</span>
   }
 }
 &nbsp;
@@ -862,34 +860,34 @@ function load() {
  * relies on the undocumented `tty_wrap.guessHandleType()` which is also lame.
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function createWritableStdioStream (fd) {</span>
-<span class="cstat-no" title="statement not covered" >  var stream;</span>
-<span class="cstat-no" title="statement not covered" >  var tty_wrap = process.binding('tty_wrap');</span>
+<span class="fstat-no" title="function not covered">function createWritableStdioStream (fd) {</span>
+<span class="cstat-no" title="statement not covered">  var stream;</span>
+<span class="cstat-no" title="statement not covered">  var tty_wrap = process.binding('tty_wrap');</span>
 &nbsp;
   // Note stream._type is used for test-module-load-list.js
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  switch (tty_wrap.guessHandleType(fd)) {</span>
+<span class="cstat-no" title="statement not covered">  switch (tty_wrap.guessHandleType(fd)) {</span>
     case 'TTY':
-<span class="cstat-no" title="statement not covered" >      stream = new tty.WriteStream(fd);</span>
-<span class="cstat-no" title="statement not covered" >      stream._type = 'tty';</span>
+<span class="cstat-no" title="statement not covered">      stream = new tty.WriteStream(fd);</span>
+<span class="cstat-no" title="statement not covered">      stream._type = 'tty';</span>
 &nbsp;
       // Hack to have stream not keep the event loop alive.
       // See https://github.com/joyent/node/issues/1726
-<span class="cstat-no" title="statement not covered" >      if (stream._handle &amp;&amp; stream._handle.unref) {</span>
-<span class="cstat-no" title="statement not covered" >        stream._handle.unref();</span>
+<span class="cstat-no" title="statement not covered">      if (stream._handle &amp;&amp; stream._handle.unref) {</span>
+<span class="cstat-no" title="statement not covered">        stream._handle.unref();</span>
       }
-<span class="cstat-no" title="statement not covered" >      break;</span>
+<span class="cstat-no" title="statement not covered">      break;</span>
 &nbsp;
     case 'FILE':
-<span class="cstat-no" title="statement not covered" >      var fs = require('fs');</span>
-<span class="cstat-no" title="statement not covered" >      stream = new fs.SyncWriteStream(fd, { autoClose: false });</span>
-<span class="cstat-no" title="statement not covered" >      stream._type = 'fs';</span>
-<span class="cstat-no" title="statement not covered" >      break;</span>
+<span class="cstat-no" title="statement not covered">      var fs = require('fs');</span>
+<span class="cstat-no" title="statement not covered">      stream = new fs.SyncWriteStream(fd, { autoClose: false });</span>
+<span class="cstat-no" title="statement not covered">      stream._type = 'fs';</span>
+<span class="cstat-no" title="statement not covered">      break;</span>
 &nbsp;
     case 'PIPE':
     case 'TCP':
-<span class="cstat-no" title="statement not covered" >      var net = require('net');</span>
-<span class="cstat-no" title="statement not covered" >      stream = new net.Socket({</span>
+<span class="cstat-no" title="statement not covered">      var net = require('net');</span>
+<span class="cstat-no" title="statement not covered">      stream = new net.Socket({</span>
         fd: fd,
         readable: false,
         writable: true
@@ -899,28 +897,28 @@ function load() {
       // stream from an existing fd which is writable only. But for now
       // we'll just add this hack and set the `readable` member to false.
       // Test: ./node test/fixtures/echo.js &lt; /etc/passwd
-<span class="cstat-no" title="statement not covered" >      stream.readable = false;</span>
-<span class="cstat-no" title="statement not covered" >      stream.read = null;</span>
-<span class="cstat-no" title="statement not covered" >      stream._type = 'pipe';</span>
+<span class="cstat-no" title="statement not covered">      stream.readable = false;</span>
+<span class="cstat-no" title="statement not covered">      stream.read = null;</span>
+<span class="cstat-no" title="statement not covered">      stream._type = 'pipe';</span>
 &nbsp;
       // FIXME Hack to have stream not keep the event loop alive.
       // See https://github.com/joyent/node/issues/1726
-<span class="cstat-no" title="statement not covered" >      if (stream._handle &amp;&amp; stream._handle.unref) {</span>
-<span class="cstat-no" title="statement not covered" >        stream._handle.unref();</span>
+<span class="cstat-no" title="statement not covered">      if (stream._handle &amp;&amp; stream._handle.unref) {</span>
+<span class="cstat-no" title="statement not covered">        stream._handle.unref();</span>
       }
-<span class="cstat-no" title="statement not covered" >      break;</span>
+<span class="cstat-no" title="statement not covered">      break;</span>
 &nbsp;
     default:
       // Probably an error on in uv_guess_handle()
-<span class="cstat-no" title="statement not covered" >      throw new Error('Implement me. Unknown stream file type!');</span>
+<span class="cstat-no" title="statement not covered">      throw new Error('Implement me. Unknown stream file type!');</span>
   }
 &nbsp;
   // For supporting legacy API we put the FD here.
-<span class="cstat-no" title="statement not covered" >  stream.fd = fd;</span>
+<span class="cstat-no" title="statement not covered">  stream.fd = fd;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  stream._isStdio = true;</span>
+<span class="cstat-no" title="statement not covered">  stream._isStdio = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return stream;</span>
+<span class="cstat-no" title="statement not covered">  return stream;</span>
 }
 &nbsp;
 /**
@@ -930,8 +928,8 @@ function load() {
  * differently for a particular `debug` instance.
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function init (debug) {</span>
-<span class="cstat-no" title="statement not covered" >  debug.inspectOpts = util._extend({}, exports.inspectOpts);</span>
+<span class="fstat-no" title="function not covered">function init (debug) {</span>
+<span class="cstat-no" title="statement not covered">  debug.inspectOpts = util._extend({}, exports.inspectOpts);</span>
 }
 &nbsp;
 /**
@@ -941,10 +939,11 @@ function load() {
 exports.enable(load());
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
     <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 21:09:22 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
