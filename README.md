@@ -1,6 +1,6 @@
 # npmtest-debug
 
-#### test coverage for  [debug (v2.6.3)](https://github.com/visionmedia/debug#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-debug.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-debug) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-debug.svg)](https://travis-ci.org/npmtest/node-npmtest-debug)
+#### basic test coverage for  [debug (v2.6.3)](https://github.com/visionmedia/debug#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-debug.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-debug) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-debug.svg)](https://travis-ci.org/npmtest/node-npmtest-debug)
 
 #### small debugging utility
 
